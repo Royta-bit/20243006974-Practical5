@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Background information about the four municipalities. The items follow the same order
+        as the names held by TextProcessor, which links a municipality to the position of its
+        summary.
+
+        Each item sits on a single line because Android keeps the line breaks and the
+        indentation written inside a string resource.
+    -->
+    <string-array name="municipalities_array">
+        <item>Beijing has served as the capital of China for centuries and is the seat of the central government today. The municipality lies in the north of the country and covers roughly 16,400 square kilometres, most of it mountainous apart from the central plain where the city is built. Its best known sites include the Forbidden City, the Summer Palace and several restored stretches of the Great Wall. The city staged the Summer Olympics in 2008 and the Winter Olympics in 2022, and it holds a dense concentration of universities, research institutes and technology firms.</item>
+        <item>Shanghai occupies the estuary of the Yangtze River on the eastern seaboard of China and forms the most populous urban area in the country. Until the nineteenth century it was a modest port; foreign trade then turned it into an industrial and financial powerhouse, and the legacy of that period is visible in the architecture along the Bund. The Pudong district on the opposite bank grew into a cluster of towers and financial institutions, and the city hosted the World Expo in 2010. Shipping remains central to the local economy, with one of the busiest container terminals in the world.</item>
+        <item>Chongqing became a municipality in 1997, when it was separated from Sichuan Province, and it is now one of the largest administrative areas in the country. The city is built across steep hills where the Yangtze and Jialing rivers meet, a setting that gave it the nickname Mountain City and shapes its dramatic skyline. Its territory stretches far beyond the urban core into farming counties, and heavy industry, car making and electronics employ much of the workforce. River cruises through the Three Gorges depart from the city, which is equally famous for its hotpot.</item>
+        <item>Tianjin lies on the coast of the Bohai Sea in northern China, roughly 120 kilometres from Beijing, and acts as the main seaport of the capital region. The city grew around the Haihe River and the surrounding canal network, and the foreign concessions of the nineteenth and early twentieth centuries left a district of European style buildings that still stands today. Binhai New Area, created as a national development zone, concentrates port facilities, aerospace plants and advanced manufacturing. Tianjin also hosted matches of the 2008 Olympic football tournament and is known for its comic performing arts.</item>
+    </string-array>
+</resources>
