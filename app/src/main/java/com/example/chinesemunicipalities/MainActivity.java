@@ -17,8 +17,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 /**
  * Main screen of the application, where the name of a municipality is entered.
- *
- * <p>Author: He Chengxiang (20243006974)</p>
  */
 public class MainActivity extends AppCompatActivity {
 

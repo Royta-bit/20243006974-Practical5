@@ -9,8 +9,6 @@ import java.util.List;
  *
  * <p>The class keeps no reference to an Activity and has no layout of its own, so both
  * screens obtain the same validation results from the same instance methods.</p>
- *
- * <p>Author: He Chengxiang (20243006974)</p>
  */
 public class TextProcessor {
 

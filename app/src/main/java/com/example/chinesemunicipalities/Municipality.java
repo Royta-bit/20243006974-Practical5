@@ -20,8 +20,6 @@ import androidx.core.view.WindowInsetsCompat;
 /**
  * Second screen of the application, which presents the municipality received from the main
  * screen.
- *
- * <p>Author: He Chengxiang (20243006974)</p>
  */
 public class Municipality extends AppCompatActivity {
 

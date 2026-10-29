@@ -10,8 +10,6 @@ import org.junit.Test;
 
 /**
  * Unit tests for {@link TextProcessor}.
- *
- * <p>Author: He Chengxiang (20243006974)</p>
  */
 public class TextProcessorTest {
 
