@@ -8,4 +8,11 @@
     <string name="error_blank_input">Please type a municipality name.</string>
     <string name="error_unknown_municipality">Beijing, Shanghai, Tianjin and Chongqing are the supported names.</string>
     <string name="description_map_image">Map of the Chinese municipalities</string>
+
+    <!-- Second screen -->
+    <string name="title_second_screen">Municipality</string>
+    <string name="label_visit_site">Visit site</string>
+    <string name="description_municipality_photo">Photograph of the selected municipality</string>
+    <string name="description_municipality_photo_named">Photograph of %1$s</string>
+    <string name="error_missing_municipality">The municipality name is missing.</string>
 </resources>
