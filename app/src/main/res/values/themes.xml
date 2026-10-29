@@ -1,5 +1,12 @@
 <resources>
-    <style name="Base.Theme.ChineseMunicipalities" parent="Theme.Material3.Light.NoActionBar" />
+    <!-- The palette is light only, so the municipality colours keep the same contrast on
+         every device. -->
+    <style name="Base.Theme.ChineseMunicipalities" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/municipality_beijing</item>
+        <item name="colorOnPrimary">@color/color_text_light</item>
+        <item name="android:colorBackground">@color/color_default_background</item>
+        <item name="android:textColorPrimary">@color/color_text_dark</item>
+    </style>
 
     <style name="Theme.ChineseMunicipalities" parent="Base.Theme.ChineseMunicipalities" />
 </resources>
