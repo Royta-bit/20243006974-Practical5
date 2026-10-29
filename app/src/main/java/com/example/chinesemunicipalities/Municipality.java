@@ -1,6 +1,9 @@
 package com.example.chinesemunicipalities;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,23 +34,26 @@ public class Municipality extends AppCompatActivity {
      * TextProcessor, so the position of a name in that list is also its position here.
      */
     private enum Style {
-        BEIJING(R.color.municipality_beijing, R.drawable.beijing),
-        SHANGHAI(R.color.municipality_shanghai, R.drawable.shanghai),
-        CHONGQING(R.color.municipality_chongqing, R.drawable.chongqing),
-        TIANJIN(R.color.municipality_tianjin, R.drawable.tianjin);
+        BEIJING(R.color.municipality_beijing, R.drawable.beijing, R.string.website_beijing),
+        SHANGHAI(R.color.municipality_shanghai, R.drawable.shanghai, R.string.website_shanghai),
+        CHONGQING(R.color.municipality_chongqing, R.drawable.chongqing, R.string.website_chongqing),
+        TIANJIN(R.color.municipality_tianjin, R.drawable.tianjin, R.string.website_tianjin);
 
         private final int accentColour;
         private final int photo;
+        private final int website;
 
-        Style(int accentColour, int photo) {
+        Style(int accentColour, int photo, int website) {
             this.accentColour = accentColour;
             this.photo = photo;
+            this.website = website;
         }
     }
 
     private final TextProcessor textProcessor = new TextProcessor();
 
     private String municipalityName;
+    private String websiteAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +71,21 @@ public class Municipality extends AppCompatActivity {
         }
 
         setTitle(municipalityName);
-        showMunicipality(municipalityName);
+        if (!showMunicipality(municipalityName)) {
+            return;
+        }
+
+        Button visitSiteButton = findViewById(R.id.visitSiteButton);
+        visitSiteButton.setOnClickListener(view -> openWebsite());
     }
 
-    /** Applies the name, colours, photograph and summary of the given municipality. */
-    private void showMunicipality(String name) {
+    /**
+     * Applies the name, colours, photograph and summary of the given municipality.
+     *
+     * @return {@code true} when the interface was filled in, {@code false} when the name had
+     *         no matching resources and the activity was closed
+     */
+    private boolean showMunicipality(String name) {
         Style[] styles = Style.values();
         String[] summaries = getResources().getStringArray(R.array.municipalities_array);
         int position = textProcessor.positionOf(name);
@@ -77,10 +93,12 @@ public class Municipality extends AppCompatActivity {
         if (position < 0 || position >= styles.length || position >= summaries.length) {
             Toast.makeText(this, R.string.error_missing_municipality, Toast.LENGTH_LONG).show();
             finish();
-            return;
+            return false;
         }
 
         Style style = styles[position];
+        websiteAddress = getString(style.website);
+
         int accentColour = ContextCompat.getColor(this, style.accentColour);
         int lightTextColour = ContextCompat.getColor(this, R.color.color_text_light);
 
@@ -103,6 +121,25 @@ public class Municipality extends AppCompatActivity {
         visitSiteButton.setBackgroundColor(accentColour);
         visitSiteButton.setBackgroundTintList(ColorStateList.valueOf(accentColour));
         visitSiteButton.setTextColor(lightTextColour);
+        return true;
+    }
+
+    /**
+     * Starts an implicit Intent for the address of the displayed municipality. No target
+     * component is named, so the request reaches whichever installed application handles web
+     * addresses, normally a browser.
+     */
+    private void openWebsite() {
+        if (websiteAddress == null) {
+            return;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(websiteAddress));
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException exception) {
+            Toast.makeText(this, R.string.error_no_browser, Toast.LENGTH_LONG).show();
+        }
     }
 
     /** Offsets the content by the system bar sizes reported for this window. */

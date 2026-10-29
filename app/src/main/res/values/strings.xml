@@ -15,4 +15,11 @@
     <string name="description_municipality_photo">Photograph of the selected municipality</string>
     <string name="description_municipality_photo_named">Photograph of %1$s</string>
     <string name="error_missing_municipality">The municipality name is missing.</string>
+
+    <!-- Official websites -->
+    <string name="error_no_browser">No web browser is available for this address.</string>
+    <string name="website_beijing" translatable="false">https://english.beijing.gov.cn/</string>
+    <string name="website_shanghai" translatable="false">https://english.shanghai.gov.cn/</string>
+    <string name="website_tianjin" translatable="false">https://en.tj.gov.cn/</string>
+    <string name="website_chongqing" translatable="false">https://english.cq.gov.cn/</string>
 </resources>
