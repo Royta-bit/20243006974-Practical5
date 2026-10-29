@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Chinese Municipalities</string>
+
+    <!-- First screen -->
+    <string name="title_main_screen">Municipalities in China</string>
+    <string name="label_municipality_input">I want to know about:</string>
+    <string name="hint_municipality_input">e.g. Beijing</string>
+    <string name="error_blank_input">Please type a municipality name.</string>
+    <string name="error_unknown_municipality">Beijing, Shanghai, Tianjin and Chongqing are the supported names.</string>
+    <string name="description_map_image">Map of the Chinese municipalities</string>
 </resources>

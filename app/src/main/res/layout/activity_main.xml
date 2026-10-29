@@ -4,6 +4,7 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_default_background"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
@@ -14,9 +15,60 @@
         android:padding="24dp">
 
         <TextView
+            android:id="@+id/screenTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chinese Municipalities" />
+            android:gravity="center"
+            android:text="@string/title_main_screen"
+            android:textColor="@color/color_text_dark"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/municipalityMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/description_map_image"
+            android:maxHeight="240dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chinese_municipalities" />
+
+        <TextView
+            android:id="@+id/inputLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/label_municipality_input"
+            android:textColor="@color/color_text_dark"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/municipalityInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_municipality_input"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_text_dark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/inputErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:accessibilityLiveRegion="polite"
+            android:textColor="@color/color_error"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="@string/error_unknown_municipality"
+            tools:visibility="visible" />
 
     </LinearLayout>
 
